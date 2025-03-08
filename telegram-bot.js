@@ -1,5 +1,5 @@
-const BOT_TOKEN = '7940253060:AAE6HFJGi0tbipn1nxsmnZ8lOk5ykTkK6PI';
-const CHANNEL_ID = '@tesssstb';
+const BOT_TOKEN = '8157458983:AAFSsAe4pdIg2FAA8yu67t7tCUU9tnd8NGI';
+const CHANNEL_ID = '-1002416755558';
 
 async function sendApplicationToChannel(applicationData) {
     const message = formatApplicationMessage(applicationData);
