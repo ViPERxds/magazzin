@@ -274,31 +274,27 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             
             try {
-                // Собираем только необходимые данные в компактном формате
+                // Минимальный набор данных в максимально сжатом формате
                 const data = {
-                    p: getProductData(), // product data
-                    r: getRequirementsData(), // requirements data
-                    t: getTzData(), // tz data
-                    s: getStoreData() // store data
+                    n: localStorage.getItem('productData') ? JSON.parse(localStorage.getItem('productData')).name || '' : '',
+                    p: localStorage.getItem('productData') ? JSON.parse(localStorage.getItem('productData')).price || '' : '',
+                    l: localStorage.getItem('productData') ? JSON.parse(localStorage.getItem('productData')).link || '' : '',
+                    r: localStorage.getItem('requirementsData') ? JSON.parse(localStorage.getItem('requirementsData')).rewardPrice || '' : '',
+                    t: localStorage.getItem('tzContent') || '',
+                    s: localStorage.getItem('storeData') ? JSON.parse(localStorage.getItem('storeData')).name || '' : ''
                 };
 
-                console.log('Подготовленные данные для отправки:', data);
-
-                // Отправляем данные в Telegram WebApp
+                // Отправляем данные
                 if (window.Telegram && window.Telegram.WebApp) {
                     window.Telegram.WebApp.sendData(JSON.stringify(data));
-                    console.log('Данные успешно отправлены в Telegram WebApp');
                 }
 
-                // Сохраняем состояние таба "Модерации" для страницы заявок
                 localStorage.setItem('activeTab', 'moderation');
-                // Сохраняем время отправки
                 localStorage.setItem('submissionTime', new Date().toISOString());
-                // Переходим на страницу заявок
                 window.location.href = 'application.html';
             } catch (error) {
                 console.error('Ошибка при отправке данных:', error);
-                alert('Произошла ошибка при отправке заявки. Пожалуйста, попробуйте еще раз.');
+                alert('Ошибка при отправке. Попробуйте еще раз.');
             }
         });
     }
