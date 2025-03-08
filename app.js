@@ -72,4 +72,29 @@ function updateApplicationsCount() {
     } catch (e) {
         console.error('Ошибка при обновлении счетчика заявок:', e);
     }
-} 
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const menuBtn = document.querySelector('.menu-btn');
+    const menuDrawer = document.querySelector('.menu-drawer');
+    const closeBtn = document.querySelector('.menu-close-btn');
+    const expandableItems = document.querySelectorAll('.menu-item.expandable');
+
+    menuBtn.addEventListener('click', () => {
+        menuDrawer.classList.add('open');
+    });
+
+    closeBtn.addEventListener('click', () => {
+        menuDrawer.classList.remove('open');
+    });
+
+    expandableItems.forEach(item => {
+        item.addEventListener('click', () => {
+            item.classList.toggle('expanded');
+            const submenu = item.nextElementSibling;
+            if (submenu && submenu.classList.contains('submenu')) {
+                submenu.classList.toggle('open');
+            }
+        });
+    });
+}); 
