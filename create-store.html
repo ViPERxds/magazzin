@@ -6,9 +6,50 @@
     <title>Создать магазин предложений</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        .progress-steps .step-btn:last-child {
+            pointer-events: none;
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Стили для уведомления */
+        .notification {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(33, 33, 33, 0.9);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-size: 14px;
+            display: none;
+            z-index: 1000;
+            max-width: 90%;
+            text-align: center;
+        }
+
+        .notification.show {
+            display: block;
+            animation: fadeInOut 2s ease-in-out forwards;
+        }
+
+        @keyframes fadeInOut {
+            0% { opacity: 0; }
+            15% { opacity: 1; }
+            85% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        /* Остальные стили */
+    </style>
 </head>
 <body>
     <div class="app-container">
+        <!-- Добавляем уведомление -->
+        <div class="notification" id="notification">Данные магазина успешно сохранены!</div>
+        
         <!-- Верхняя панель -->
         <header class="header">
             <div class="logo-container">
