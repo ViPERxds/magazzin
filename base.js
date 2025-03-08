@@ -274,13 +274,15 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             
             try {
-                // Собираем все данные
+                // Собираем только необходимые данные в компактном формате
                 const data = {
-                    p: getProductData() || {}, // product data
-                    r: getRequirementsData() || {}, // requirements data
-                    t: getTzData() || '', // tz data
-                    s: getStoreData() || {} // store data
+                    p: getProductData(), // product data
+                    r: getRequirementsData(), // requirements data
+                    t: getTzData(), // tz data
+                    s: getStoreData() // store data
                 };
+
+                console.log('Подготовленные данные для отправки:', data);
 
                 // Отправляем данные в Telegram WebApp
                 if (window.Telegram && window.Telegram.WebApp) {
@@ -306,11 +308,10 @@ document.addEventListener('DOMContentLoaded', function() {
 function getProductData() {
     const productData = JSON.parse(localStorage.getItem('productData') || '{}');
     return {
-        name: productData.name || '',
-        price: productData.price || '',
-        link: productData.link || '',
-        marketplace: productData.marketplace || [],
-        images: productData.allImages || []
+        n: productData.name || '', // name
+        p: productData.price || '', // price
+        l: productData.link || '', // link
+        m: productData.marketplace || [] // marketplace
     };
 }
 
@@ -318,12 +319,12 @@ function getProductData() {
 function getRequirementsData() {
     const requirementsData = JSON.parse(localStorage.getItem('requirementsData') || '{}');
     return {
-        rewardPrice: requirementsData.rewardPrice || '',
-        socialRequirements: requirementsData.socialRequirements || {
+        rp: requirementsData.rewardPrice || '', // reward price
+        sr: requirementsData.socialRequirements || { // social requirements
             instagram: {
-                pool: false,
-                reels: false,
-                stories: false
+                followers: requirementsData.socialRequirements?.instagram?.followers || '',
+                reels: requirementsData.socialRequirements?.instagram?.reels || '',
+                stories: requirementsData.socialRequirements?.instagram?.stories || ''
             }
         }
     };
@@ -331,18 +332,16 @@ function getRequirementsData() {
 
 // Функция получения данных о ТЗ
 function getTzData() {
-    const tzData = JSON.parse(localStorage.getItem('tzData') || '{}');
-    return {
-        contentRequirements: tzData.contentRequirements || ''
-    };
+    return localStorage.getItem('tzContent') || '';
 }
 
 // Функция получения данных о магазине
 function getStoreData() {
     const storeData = JSON.parse(localStorage.getItem('storeData') || '{}');
     return {
-        name: storeData.name || '',
-        description: storeData.description || ''
+        n: storeData.name || '', // name
+        e: storeData.email || '', // email
+        p: storeData.phone || '' // phone
     };
 }
 
