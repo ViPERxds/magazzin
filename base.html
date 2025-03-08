@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Предпросмотр заявки</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="base.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Верхняя панель -->
+        <header class="header">
+            <div class="logo-container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="assets/logo.png" alt="Логотип">
+                    </a>
+                </div>
+                <div class="catalog-container">
+                    <img src="assets/katalog.png" alt="Каталог" class="catalog-icon">
+                    <span class="catalog-text">Каталог</span>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="notification-btn">
+                    <img src="assets/yved.png" alt="Уведомления">
+                    <span class="notification-count">0</span>
+                </button>
+                <button class="menu-btn">
+                    <div class="hamburger-menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+                <div class="avatar">
+                    <img src="https://i.pravatar.cc/100" alt="Аватар пользователя">
+                </div>
+            </div>
+        </header>
+
+        <!-- Основной контент -->
+        <div class="main-content">
+            <div class="back-button-container">
+                <a href="application.html" class="back-button">
+                    <span class="back-arrow"></span> 
+                </a>
+            </div>
+            <h1>
+                <span class="purple-text">Предпросмотр</span>
+                заявки на поиск
+            </h1>
+
+            <h2 class="product-name" id="productName">
+                Название товара в 2<br>
+                строчки остальное...
+            </h2>
+
+            <!-- Статистика просмотров -->
+            <div class="views-stats">
+                <img src="assets/eye.png" alt="Просмотры" class="views-icon">
+                <span class="views-count">400 откликов</span>
+            </div>
+
+            <!-- Информация о товаре -->
+            <div class="product-info">
+                <div class="product-image">
+                    <img src="" alt="Фото товара" id="productImage">
+                    <div class="image-size">310 x 414</div>
+                </div>
+
+                <!-- Цены -->
+                <div class="price-container">
+                    <div class="price-block reward">
+                        <span class="price" id="rewardPrice">800 ₽</span>
+                        <span class="price-label">Выплата</span>
+                    </div>
+                    <div class="price-block cost">
+                        <span class="price" id="productPrice">500 ₽</span>
+                        <span class="price-label">Цена</span>
+                    </div>
+                </div>
+
+                <!-- Доплата -->
+                <div class="bonus-condition">
+                    <div class="bonus-details" id="bonusDetails">
+                        <span class="condition-label">Доплата</span>Нет
+                    </div>
+                </div>
+
+                <!-- Блоки с условиями -->
+                <div class="conditions-grid">
+                    <div class="condition-block">
+                        <div class="condition-label">Выплата</div>
+                        <div class="condition-value" id="paymentType">Сразу</div>
+                    </div>
+                    
+                    <div class="condition-block">
+                        <div class="condition-label">Выкуп по ключу</div>
+                        <div class="condition-value" id="keyPurchase">Да</div>
+                    </div>
+                    
+                    <div class="condition-block">
+                        <div class="condition-label">Возврат</div>
+                        <div class="condition-value" id="returnPolicy">Нет</div>
+                    </div>
+                    
+                    <div class="condition-block">
+                        <div class="condition-label">Отзыв</div>
+                        <div class="condition-value" id="reviewType">Да, с фото</div>
+                    </div>
+                </div>
+
+                <!-- ТЗ на контент -->
+                <div class="tz-block">
+                    <img src="assets/tz.png" alt="ТЗ на контент и интеграцию" class="tz-image">
+
+                </div>
+
+                <!-- Всплывающее окно для ТЗ -->
+                <div class="tz-popup" id="tzPopup">
+                    <div class="popup-content">
+                        <button class="close-popup">&times;</button>
+                        <div class="popup-header">
+                            <div class="popup-avatar">
+                                <img src="assets/logo.png" alt="Логотип">
+                            </div>
+                            <h3>ТЗ на контент и интеграцию</h3>
+                        </div>
+                        <div class="popup-body" id="tzContent">
+                            <!-- Здесь будет отображаться содержимое ТЗ из localStorage -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Требования к охватам -->
+                <div class="requirements-block">
+                    <h3>Требования к охватам</h3>
+                    <div class="social-tabs">
+                        <button class="social-tab active">Instagram*</button>
+                        <button class="social-tab">VK</button>
+                    </div>
+                    <div class="requirements-list">
+                        <div class="requirement-item">
+                            <span class="requirement-label">Пул от:</span>
+                            <span class="requirement-value">1000</span>
+                        </div>
+                        <div class="requirement-item">
+                            <span class="requirement-label">Reels от:</span>
+                            <span class="requirement-value">600</span>
+                        </div>
+                        <div class="requirement-item">
+                            <span class="requirement-label">Stories от:</span>
+                            <span class="requirement-value">250</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Кнопки действий -->
+                <a href="application.html" class="button-link">
+                    <button class="publish-btn">Опубликовать</button>
+                </a>
+                <button class="edit-btn">Редактировать</button>
+
+                <!-- Предложение -->
+                <div class="offer-block">
+                    <h3>Предложение от:</h3>
+                    <div class="shop-info">
+                        <div class="shop-details">
+                            <span class="shop-name">Перочка терминатор 3000</span>
+                            <div class="shop-rating">
+                                <img src="assets/star.png" alt="Рейтинг" class="rating-icon">
+                                <span class="rating-value">4.9 (40)</span>
+                            </div>
+                            <span class="offers-count">10 предложений</span>
+                        </div>
+                        <div class="shop-avatar">
+                            <img src="assets/shop-avatar.jpg" alt="Аватар магазина">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Дополнительные кнопки -->
+                <div class="additional-buttons">
+                    <button class="blogger-btn">Хочу быть блогером</button>
+                    <button class="help-btn">Есть вопрос? Нужна помощь?</button>
+                    <button class="idea-btn">Предложить идею</button>
+                    <button class="cooperation-btn">Сотрудничество</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="base.js"></script>
+</body>
+</html> 

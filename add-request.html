@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавить заявку</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        .progress-steps .step-btn:last-child {
+            pointer-events: none;
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Стили для блока загрузки фото */
+        .upload-container {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .upload-btn {
+            width: 100%;
+            height: 120px;
+            border: 1px dashed #E0E0E0;
+            border-radius: 12px;
+            background: #F5F7FA;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            cursor: pointer;
+            padding: 12px;
+        }
+
+        .upload-btn img {
+            width: 24px;
+            height: 24px;
+            margin-bottom: 4px;
+        }
+
+        .upload-btn span {
+            font-size: 12px;
+            color: #666;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        .upload-btn .file-size {
+            font-size: 10px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <header class="header">
+            <div class="logo-container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="assets/logo.png" alt="Логотип">
+                    </a>
+                </div>
+                <div class="catalog-container">
+                    <img src="assets/katalog.png" alt="Каталог" class="catalog-icon">
+                    <span class="catalog-text">Каталог</span>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="notification-btn">
+                    <img src="assets/yved.png" alt="Уведомления">
+                    <span class="notification-count">0</span>
+                </button>
+                <button class="menu-btn">
+                    <div class="hamburger-menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+            </div>
+        </header>
+
+        <main class="add-request-content">
+            <h1><span>Добавить</span> заявку на<br>поиск блогера</h1>
+            
+            <div class="stats">
+                <span>Скидка 10%</span>
+                <span>Размещений: 1</span>
+            </div>
+
+            <div class="progress-steps">
+                <button class="step-btn active">Товар</button>
+                <button class="step-btn">Требования</button>
+                <button class="step-btn">ТЗ</button>
+                <button class="step-btn">Готово</button>
+            </div>
+            <div class="progress-line">
+                <div class="progress-fill"></div>
+            </div>
+
+            <form class="request-form">
+                <div class="form-group">
+                    <label>Название товара</label>
+                    <input type="text" class="stats-input" placeholder="">
+                </div>
+
+                <div class="form-group">
+                    <label>Маркетплейс</label>
+                    <div class="marketplace-options">
+                        <button type="button" class="marketplace-btn">Wildberries</button>
+                        <button type="button" class="marketplace-btn">OZON</button>
+                    </div>
+                    <span class="hint">*Можно выбрать несколько</span>
+                </div>
+
+                <div class="form-group">
+                    <label>Цена товара</label>
+                    <input type="text" class="stats-input" placeholder="">
+                </div>
+
+                <div class="form-group">
+                    <label>Ссылка на товар</label>
+                    <input type="url" class="stats-input" placeholder="">
+                    <div class="unimportant">
+                        <input type="checkbox" id="hideFromBloggers">
+                        <label for="hideFromBloggers">Не показывать блогерам</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Категория товара</label>
+                    <select class="stats-input">
+                        <option value="">Выбрать</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Фото товара</label>
+                    <div class="upload-container">
+                        <input type="file" id="fileInput" multiple accept="image/*" style="display: none;">
+                        <button type="button" class="upload-btn" id="uploadBtn">
+                            <img src="assets/zagruzka.png" alt="Загрузить">
+                            <span>Кликните или перетащите<br>сюда фото, чтобы загрузить</span>
+                            <span class="file-size">До 10 шт</span>
+                        </button>
+                        <div id="imagePreview" class="image-preview"></div>
+                    </div>
+                </div>
+
+                <button type="button" class="submit-btn" onclick="window.location.href='requirements.html'">Добавить требования</button>
+            </form>
+        </main>
+
+        <div class="additional-buttons">
+            <button class="blogger-btn">Хочу быть блогером</button>
+            <button class="help-btn">Есть вопрос? Нужна помощь?</button>
+            <button class="idea-btn">Предложить идею</button>
+            <button class="cooperation-btn">Сотрудничество</button>
+        </div>
+    </div>
+    <script src="add-request.js"></script>
+</body>
+</html> 

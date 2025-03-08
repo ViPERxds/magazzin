@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Техническое задание</title>
+    <link rel="stylesheet" href="tz.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <header class="header">
+            <div class="logo-container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="assets/logo.png" alt="Логотип">
+                    </a>
+                </div>
+                <div class="catalog-container">
+                    <img src="assets/katalog.png" alt="Каталог" class="catalog-icon">
+                    <span class="catalog-text">Каталог</span>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="notification-btn">
+                    <img src="assets/yved.png" alt="Уведомления">
+                    <span class="notification-count">0</span>
+                </button>
+                <button class="menu-btn">
+                    <div class="hamburger-menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+            </div>
+        </header>
+
+        <main class="tz-content">
+            <h1><span>Добавить</span> заявку на<br>поиск блогера</h1>
+            <div class="stats">
+                <span>Скидка 10%</span>
+                <span>Размещений: 1</span>
+            </div>
+
+            <button class="back-link">Предыдущий шаг</button>
+
+            <div class="progress-steps">
+                <button class="step-btn completed">Товар</button>
+                <button class="step-btn completed">Требования</button>
+                <button class="step-btn active">ТЗ</button>
+                <button class="step-btn">Готово</button>
+            </div>
+            <div class="progress-line">
+                <div class="progress-fill"></div>
+            </div>
+
+            <div class="examples-block">
+                <img src="assets/primer.png" alt="Примеры ТЗ для блогера" class="examples-image">
+            </div>
+
+            <div class="tz-form">
+                <div class="form-group">
+                    <label>Ваше ТЗ</label>
+                    <textarea class="tz-textarea" placeholder="Опишите ваши пожелания к видео"></textarea>
+                </div>
+
+                <button type="button" class="submit-btn" onclick="window.location.href='base.html'">Далее</button>
+            </div>
+        </main>
+
+        <div class="additional-buttons">
+            <button class="blogger-btn">Хочу быть блогером</button>
+            <button class="help-btn">Есть вопрос? Нужна помощь?</button>
+            <button class="idea-btn">Предложить идею</button>
+            <button class="cooperation-btn">Сотрудничество</button>
+        </div>
+    </div>
+    <script src="tz.js"></script>
+</body>
+</html> 

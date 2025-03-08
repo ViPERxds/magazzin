@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Требования к блогеру</title>
+    <link rel="stylesheet" href="requirements.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Верхняя панель -->
+        <header class="header">
+            <div class="logo-container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="assets/logo.png" alt="Логотип">
+                    </a>
+                </div>
+                <div class="catalog-container">
+                    <img src="assets/katalog.png" alt="Каталог" class="catalog-icon">
+                    <span class="catalog-text">Каталог</span>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="notification-btn">
+                    <img src="assets/yved.png" alt="Уведомления">
+                    <span class="notification-count">0</span>
+                </button>
+                <button class="menu-btn">
+                    <div class="hamburger-menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+                <div class="avatar">
+                    <img src="https://i.pravatar.cc/100" alt="Аватар пользователя">
+                </div>
+            </div>
+        </header>
+
+        <!-- Основной контент -->
+        <div class="requirements-content">
+            <h1><span class="purple-text">Добавить</span> заявку на<br>поиск блогера</h1>
+            
+            <div class="stats">
+                <span>Скидка 10%</span>
+                <span>Размещений: 1</span>
+            </div>
+
+            <button class="back-link">Предыдущий шаг</button>
+
+            <!-- Прогресс -->
+            <div class="progress-tabs">
+                <div class="tab-buttons">
+                    <div class="tab-btn active">Товар</div>
+                    <div class="tab-btn active">Требования</div>
+                    <div class="tab-btn">ТЗ</div>
+                    <div class="tab-btn">Готово</div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 50%;"></div>
+                </div>
+            </div>
+
+            <!-- Подсказка -->
+            <div class="requirements-hint">
+                <img src="assets/kaka.png" alt="Как посчитать требования к блогеру">
+            </div>
+
+            <!-- Форма социальных сетей -->
+            <div class="social-networks">
+                <h2>Соц. сети</h2>
+                
+                <!-- Instagram -->
+                <div class="social-network-block">
+                    <div class="social-header" data-network="instagram">
+                        <span class="network-name">Instagram</span>
+                        <span class="network-hint">(клик чтобы заполнить)</span>
+                        <button class="toggle-btn">▼</button>
+                    </div>
+                    <div class="network-fields">
+                        <div class="stats-group">
+                            <label>Подписчики от</label>
+                            <input type="text" class="stats-input" placeholder="0">
+                            <div class="unimportant">
+                                <input type="checkbox" id="instagram-followers-unimportant">
+                                <label for="instagram-followers-unimportant">Неважно</label>
+                            </div>
+                        </div>
+
+                        <div class="stats-group">
+                            <label>Просмотры Reels от</label>
+                            <input type="text" class="stats-input" placeholder="0">
+                            <div class="unimportant">
+                                <input type="checkbox" id="instagram-reels-unimportant">
+                                <label for="instagram-reels-unimportant">Неважно</label>
+                            </div>
+                        </div>
+
+                        <div class="stats-group">
+                            <label>Просмотры Stories от</label>
+                            <input type="text" class="stats-input" placeholder="0">
+                            <div class="unimportant">
+                                <input type="checkbox" id="instagram-stories-unimportant">
+                                <label for="instagram-stories-unimportant">Неважно</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Telegram -->
+                <div class="social-network-block">
+                    <div class="social-header" data-network="telegram">
+                        <span class="network-name">Telegram</span>
+                        <span class="network-hint">(клик чтобы заполнить)</span>
+                        <button class="toggle-btn">▼</button>
+                    </div>
+                    <div class="network-fields">
+                        <div class="stats-group">
+                            <label>Подписчики от</label>
+                            <input type="text" class="stats-input" placeholder="0">
+                            <div class="unimportant">
+                                <input type="checkbox" id="telegram-followers-unimportant">
+                                <label for="telegram-followers-unimportant">Неважно</label>
+                            </div>
+                        </div>
+
+                        <div class="stats-group">
+                            <label>Кол-во просмотров на пост от</label>
+                            <input type="text" class="stats-input" placeholder="0">
+                            <div class="unimportant">
+                                <input type="checkbox" id="telegram-views-unimportant">
+                                <label for="telegram-views-unimportant">Неважно</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TikTok -->
+                <div class="social-network-block">
+                    <div class="social-header" data-network="tiktok">
+                        <span class="network-name">TikTok</span>
+                        <span class="network-hint">(клик чтобы заполнить)</span>
+                        <button class="toggle-btn">▼</button>
+                    </div>
+                    <div class="network-fields">
+                        <div class="stats-group">
+                            <label>Подписчики от</label>
+                            <input type="text" class="stats-input" placeholder="0">
+                            <div class="unimportant">
+                                <input type="checkbox" id="tiktok-followers-unimportant">
+                                <label for="tiktok-followers-unimportant">Неважно</label>
+                            </div>
+                        </div>
+
+                        <div class="stats-group">
+                            <label>Кол-во просмотров на видео от</label>
+                            <input type="text" class="stats-input" placeholder="0">
+                            <div class="unimportant">
+                                <input type="checkbox" id="tiktok-views-unimportant">
+                                <label for="tiktok-views-unimportant">Неважно</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VK -->
+                <div class="social-network-block">
+                    <div class="social-header" data-network="vk">
+                        <span class="network-name">VK</span>
+                        <span class="network-hint">(клик чтобы заполнить)</span>
+                        <button class="toggle-btn">▼</button>
+                    </div>
+                    <div class="network-fields">
+                        <div class="stats-group">
+                            <label>Подписчики от</label>
+                            <input type="text" class="stats-input" placeholder="0">
+                            <div class="unimportant">
+                                <input type="checkbox" id="vk-followers-unimportant">
+                                <label for="vk-followers-unimportant">Неважно</label>
+                            </div>
+                        </div>
+
+                        <div class="stats-group">
+                            <label>Кол-во просмотров на пост/видео от</label>
+                            <input type="text" class="stats-input" placeholder="0">
+                            <div class="unimportant">
+                                <input type="checkbox" id="vk-views-unimportant">
+                                <label for="vk-views-unimportant">Неважно</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- YouTube -->
+                <div class="social-network-block">
+                    <div class="social-header" data-network="youtube">
+                        <span class="network-name">YouTube</span>
+                        <span class="network-hint">(клик чтобы заполнить)</span>
+                        <button class="toggle-btn">▼</button>
+                    </div>
+                    <div class="network-fields">
+                        <div class="stats-group">
+                            <label>Подписчики от</label>
+                            <input type="text" class="stats-input" placeholder="0">
+                            <div class="unimportant">
+                                <input type="checkbox" id="youtube-followers-unimportant">
+                                <label for="youtube-followers-unimportant">Неважно</label>
+                            </div>
+                        </div>
+
+                        <div class="stats-group">
+                            <label>Кол-во просмотров на Shorts от</label>
+                            <input type="text" class="stats-input" placeholder="0">
+                            <div class="unimportant">
+                                <input type="checkbox" id="youtube-shorts-unimportant">
+                                <label for="youtube-shorts-unimportant">Неважно</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Вознаграждение -->
+            <div class="reward-section">
+                <h2>Вознаграждение</h2>
+                <input type="text" class="reward-input" placeholder="">
+                <p class="reward-hint">*Если без доплаты то оставьте поле пустым, если вы договариваетесь укажите сумму с доплатой</p>
+
+                <div class="reward-option">
+                    <h3>Доплата при условии</h3>
+                    <div class="option-buttons">
+                        <button class="option-btn" data-value="yes">Да</button>
+                        <button class="option-btn" data-value="no">Нет</button>
+                    </div>
+                    <a href="#" class="what-is-it">Что это?</a>
+                </div>
+
+                <div class="condition-fields">
+                    <div class="input-group">
+                        <label>Условие</label>
+                        <input type="text" class="condition-input" placeholder="">
+                    </div>
+                    <div class="input-group">
+                        <label>Сумма</label>
+                        <input type="text" class="condition-input" placeholder="">
+                    </div>
+                </div>
+
+                <div class="reward-option">
+                    <h3>Выкуп по ключу</h3>
+                    <div class="option-buttons">
+                        <button class="option-btn" data-value="yes">Да</button>
+                        <button class="option-btn" data-value="no">Нет</button>
+                    </div>
+                    <a href="#" class="what-is-it">Что это?</a>
+                </div>
+
+                <div class="reward-option">
+                    <h3>Возможен возврат?</h3>
+                    <div class="option-buttons">
+                        <button class="option-btn" data-value="yes">Да</button>
+                        <button class="option-btn" data-value="no">Нет</button>
+                    </div>
+                    <a href="#" class="what-is-it">Что это?</a>
+                </div>
+
+                <div class="reward-option">
+                    <h3>Нужен отзыв?</h3>
+                    <div class="option-buttons">
+                        <button class="option-btn" data-value="yes">Да</button>
+                        <button class="option-btn" data-value="no">Нет</button>
+                    </div>
+                    <a href="#" class="what-is-it">Что это?</a>
+                </div>
+
+                <button class="add-tz-btn" onclick="window.location.href='tz.html'">Добавить ТЗ</button>
+
+                <div class="additional-blocks">
+                    <div class="block">
+                        <h3>Хочу быть блогером</h3>
+                    </div>
+                    <div class="block dark">
+                        <h3>Есть вопрос? Нужна помощь?</h3>
+                    </div>
+                    <div class="block">
+                        <h3>Предложить идею</h3>
+                    </div>
+                    <div class="block">
+                        <h3>Сотрудничество</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="requirements.js"></script>
+
+    <!-- Поп-апы для подсказок -->
+    <div class="popup-overlay" id="bonusPopup">
+        <div class="popup-content">
+            <button class="popup-close">&times;</button>
+            <h3 class="popup-title">Доплата при условии</h3>
+            <p class="popup-text">Дополнительное вознаграждение, которое блогер получит при выполнении определенных условий. Например, если видео наберет определенное количество просмотров или лайков.</p>
+            <button class="popup-button">Понятно</button>
+        </div>
+    </div>
+
+    <div class="popup-overlay" id="keyPurchasePopup">
+        <div class="popup-content">
+            <button class="popup-close">&times;</button>
+            <h3 class="popup-title">Выкуп по ключу</h3>
+            <p class="popup-text">Блогер должен будет купить товар по промокоду или через специальную ссылку. Это подтвердит реальную покупку товара для обзора.</p>
+            <button class="popup-button">Понятно</button>
+        </div>
+    </div>
+
+    <div class="popup-overlay" id="returnPolicyPopup">
+        <div class="popup-content">
+            <button class="popup-close">&times;</button>
+            <h3 class="popup-title">Возможность возврата</h3>
+            <p class="popup-text">Если выбрано "Да", блогер сможет вернуть товар после съемки контента. При возврате сумма выкупа будет возмещена, а вознаграждение за контент сохранится.</p>
+            <button class="popup-button">Понятно</button>
+        </div>
+    </div>
+
+    <div class="popup-overlay" id="reviewPopup">
+        <div class="popup-content">
+            <button class="popup-close">&times;</button>
+            <h3 class="popup-title">Отзыв с фото</h3>
+            <p class="popup-text">Блогер должен будет оставить отзыв о товаре на площадке с фотографиями. Это поможет повысить доверие к товару и увеличить продажи.</p>
+            <button class="popup-button">Понятно</button>
+        </div>
+    </div>
+
+    <div class="popup-overlay" id="requirementsHintPopup">
+        <div class="popup-content">
+            <button class="popup-close">&times;</button>
+            <h3 class="popup-title">Как посчитать требования к блогеру</h3>
+            <p class="popup-text">Укажите минимальные требования к статистике блогера для каждой соцсети. Это поможет найти подходящих блогеров для вашей рекламной кампании.</p>
+            <p class="popup-text">• Для Instagram важны показатели охвата Stories и просмотров Reels<br>
+            • Для YouTube учитывайте просмотры на Shorts<br>
+            • Для TikTok важен показатель среднего количества просмотров</p>
+            <p class="popup-text">Если какой-то показатель неважен, отметьте его галочкой "Неважно".</p>
+            <button class="popup-button">Понятно</button>
+        </div>
+    </div>
+</body>
+</html> 

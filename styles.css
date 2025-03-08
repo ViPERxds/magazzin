@@ -1,0 +1,1400 @@
+:root {
+    --primary-color: #9747FF;
+    --secondary-color: #9747FF;
+    --background-color: #F5F5F5;
+    --card-background: #FFFFFF;
+    --text-color: #333333;
+    --border-radius: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.app-container {
+    max-width: 360px;
+    margin: 0 auto;
+    background-color: white;
+    min-height: 100vh;
+}
+
+.header-title {
+    font-size: 14px;
+    color: #666;
+    padding: 8px 12px;
+}
+
+/* Стили для верхней панели */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    width: 360px;
+    height: 47px;
+    background-color: #F5F7FA;
+    border-radius: 12px;
+    border: 1px solid #E0E0E0;
+    margin-bottom: 16px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    overflow: hidden;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.catalog-container {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.catalog-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.catalog-text {
+    font-size: 16px;
+    font-weight: normal;
+    color: #000;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.notification-btn, .menu-btn {
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+}
+
+.notification-btn {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    outline: none;
+}
+
+.notification-btn img {
+    width: 24px;
+    height: 24px;
+}
+
+.notification-count {
+    font-size: 12px;
+    font-weight: 600;
+    color: #9747FF;
+    line-height: 1;
+}
+
+.menu-btn img {
+    width: 24px;
+    height: 24px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid var(--primary-color);
+    padding: 3px;
+    box-sizing: border-box;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Информационные блоки */
+.info-blocks {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+    padding: 0 12px;
+    margin-top: 20px;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+.info-blocks::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.info-block {
+    border-radius: 24px;
+    padding: 12px 8px;
+    text-align: center;
+    min-width: 100px;
+    width: 100px;
+    height: 104.05px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.info-block:nth-child(1) {
+    background-color: #F0C4FF;
+}
+
+.info-block:nth-child(2) {
+    background-color: #C2FFCF;
+}
+
+.info-block:nth-child(3) {
+    background-color: #6A7DFF;
+    color: white;
+}
+
+.info-block:nth-child(4) {
+    background-color: #FFDFA0;
+}
+
+.info-block-content {
+    width: 100%;
+    overflow: hidden;
+}
+
+.info-block h3 {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.3;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Кнопка добавления заявки */
+.add-request {
+    margin: 0 12px 16px;
+    width: 336px;
+    height: 140px;
+    border-radius: 16px;
+    background: #F5F5F5;
+    overflow: hidden;
+    position: relative;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    text-align: left;
+    transition: transform 0.2s ease;
+}
+
+.add-request:hover {
+    transform: scale(1.02);
+}
+
+.add-request:active {
+    background: #E8E8E8;
+}
+
+.add-request-content {
+    padding: 12px;
+}
+
+.add-request-content h1 {
+    font-size: 32px;
+    margin: 8px 0;
+    font-weight: 550;
+    line-height: 1.2;
+}
+
+.add-request-content h1 span {
+    color: var(--primary-color);
+}
+
+.request-tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
+    position: relative;
+    padding: 0;
+}
+
+.progress-steps {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.step-btn {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #E0E0E0;
+    border-radius: 12px;
+    background: white;
+    font-size: 14px;
+    color: #000;
+    cursor: pointer;
+}
+
+.step-btn:last-child {
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.step-btn.active {
+    border: 2px solid var(--primary-color);
+    padding: 7px;
+
+    font-weight: 500;
+}
+
+.step-btn.completed {
+    border: 2px solid var(--primary-color);
+    padding: 7px;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.step-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.step-btn:active {
+    transform: scale(0.98);
+}
+
+.progress-line {
+    height: 4px;
+    background: #F5F5F5;
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 24px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #D67BFF 0%, #9747FF 100%);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+    width: 25%;
+}
+
+.request-stats {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.request-stats span {
+    font-size: 14px;
+    color: #000;
+    background: #F5F5F5;
+    padding: 6px 12px;
+    border-radius: 100px;
+}
+
+/* Удаляем старые стили */
+.progress-image,
+.tab-btn,
+.progress-bar,
+.progress {
+    display: none;
+}
+
+/* Обновляем стили текста и кнопок */
+.form-group label {
+    display: block;
+    font-size: 14px;
+    color: #000;
+    margin-bottom: 8px;
+}
+
+.marketplace-options {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 4px;
+    width: 100%;
+}
+
+.marketplace-btn {
+    flex: 1;
+    padding: 16px;
+    border: 1px solid #E0E0E0;
+    border-radius: 12px;
+    background: white;
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.marketplace-btn.active {
+    background: rgba(151, 71, 255, 0.1);
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.marketplace-btn:focus {
+    outline: none;
+}
+
+.marketplace-btn:active {
+    transform: scale(0.98);
+}
+
+/* Убираем стандартные стили для кнопок */
+button {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+}
+
+.hint {
+    font-size: 12px;
+    color: #666;
+    font-weight: 500;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 18px;
+    background: linear-gradient(135deg, #FF7BFF 0%, #FF4FD0 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 32px;
+    cursor: pointer;
+}
+
+.submit-btn:active {
+    background: linear-gradient(135deg, #FF6AFF 0%, #FF3FC0 100%);
+}
+
+/* Разделы */
+.sections {
+    margin: 0 12px 24px;
+}
+
+.section-row {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.section-item {
+    flex: 1;
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    padding: 16px;
+    position: relative;
+    height: 123px;
+    width: 160px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.section-item h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.count {
+    font-size: 24px;
+    font-weight: 700;
+    color: #AAAAAA;
+}
+
+.section-icon {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+}
+
+.section-icon img {
+    width: 32px;
+    height: 32px;
+}
+
+/* Дополнительные кнопки */
+.additional-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 40px 0;
+    padding: 0 12px;
+}
+
+.additional-buttons button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.help-btn {
+    background-color: #212121 !important;
+    color: white !important;
+}
+
+.blogger-btn, .idea-btn, .cooperation-btn {
+    background-color: var(--card-background);
+}
+
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    width: 24px;
+    height: 14px;
+    justify-content: center;
+    gap: 4px;
+}
+
+.hamburger-menu span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: #333;
+    border-radius: 2px;
+}
+
+.access-page {
+    max-width: 360px;
+    margin: 0 auto;
+    background: white;
+    min-height: 100vh;
+}
+
+.access-content {
+    padding: 0 12px;
+}
+
+.access-content h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+    font-weight: 550;
+    line-height: 1.2;
+}
+
+/* Остальной текст заголовка */
+.access-content h1 .black-text {
+    color: #000;
+    font-weight: 550;
+}
+
+.access-content h1 + p {
+    font-size: 24px;
+    color: #000;
+    margin-bottom: 16px;
+    font-weight: 400;
+}
+
+.stats {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.stats span {
+    font-size: 14px;
+    color: #000;
+    background: #F5F5F5;
+    padding: 6px 12px;
+    border-radius: 100px;
+    font-weight: 450;
+}
+
+.manager-card {
+    background: #E8FFE9;
+    border-radius: 16px;
+    padding: 0;
+    margin-bottom: 12px;
+    position: relative;
+    min-height: 120px;
+    overflow: hidden;
+}
+
+.manager-photo {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.write-manager-btn {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 30px;
+    cursor: pointer;
+    color: transparent;
+    font-size: 20px;
+    font-weight: 400;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+}
+
+.code-input-section {
+    margin-bottom: 24px;
+}
+
+.code-input-section label {
+    display: block;
+    margin-bottom: 8px;
+    color: #000;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.code-input-section input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #E0E0E0;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 400;
+    background: white;
+}
+
+.code-input-section input::placeholder {
+    color: transparent;
+}
+
+.get-access-btn {
+    width: 100%;
+    padding: 18px;
+    background: linear-gradient(135deg, #FF7BFF 0%, #FF4FD0 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    margin-bottom: 60px;
+    font-weight: 600;
+}
+
+.get-access-btn:active {
+    background: linear-gradient(135deg, #FF6AFF 0%, #FF3FC0 100%);
+}
+
+.additional-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 0 12px;
+    width: 336px;
+    box-sizing: border-box;
+    margin-bottom: 40px;
+}
+
+.additional-links button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Добавляем новые стили для страницы создания магазина */
+.create-store-content {
+    padding: 0 12px;
+}
+
+.create-store-content h1 {
+    font-size: 32px;
+    margin-bottom: 32px;
+    font-weight: 550;
+    line-height: 1.2;
+}
+
+.purple-text {
+    color: var(--primary-color);
+}
+
+.store-form {
+    margin-bottom: 40px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group input {
+    padding: 12px;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.form-group input::placeholder {
+    color: #999;
+}
+
+.requirements-hint {
+    background: #FFF9E5;
+    border-radius: 12px;
+    padding: 16px;
+    margin: 16px 0;
+}
+
+.requirements-hint h3 {
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 8px;
+}
+
+.requirements-hint p {
+    font-size: 14px;
+    color: #666;
+}
+
+.social-networks {
+    margin-top: 24px;
+}
+
+.social-networks h2 {
+    font-size: 18px;
+    color: #000;
+    margin-bottom: 16px;
+}
+
+.input-with-hint {
+    position: relative;
+    margin-bottom: 8px;
+}
+
+.input-with-hint input {
+    padding-right: 80px;
+}
+
+.input-hint {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 12px;
+}
+
+.upload-btn {
+    width: 100%;
+
+    border: 2px dashed #E0E0E0;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #F5F7FA;
+    cursor: pointer;
+    padding: 16px;
+    transition: all 0.3s ease;
+}
+
+.upload-btn:hover {
+    border-color: var(--primary-color);
+    background: #F0F2F5;
+}
+
+.upload-btn img {
+    max-width: 100%;
+    height: 300px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.upload-btn span {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+}
+
+.upload-btn .file-size {
+    font-size: 12px;
+    color: #999;
+}
+
+.form-group select {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #E0E0E0;
+    border-radius: 12px;
+    font-size: 16px;
+    background: white;
+    appearance: none; /* Убираем стандартную стрелку */
+    background-image: url('assets/arrow-down.png'); /* Добавляем свою стрелку */
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 16px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+/* Стили для опций в селекте */
+.form-group select option {
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Убираем обводку при фокусе */
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+/* Стили для плейсхолдера */
+.form-group select option[value=""] {
+    color: #666;
+}
+
+/* Стили для карточки добавления заявки */
+.add-request-text {
+    padding: 24px 0 24px 24px;
+}
+
+.add-request-text h2 {
+    font-size: 32px;
+    color: var(--primary-color);
+    margin: 0;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.add-request-text p {
+    font-size: 24px;
+    color: #000;
+    margin: 4px 0 16px 0;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.add-request-stats {
+    display: flex;
+    gap: 12px;
+    flex-direction: row;
+    white-space: nowrap;
+}
+
+.add-request-stats span {
+    font-size: 14px;
+    color: #000;
+    background: white;
+    padding: 8px 16px;
+    border-radius: 100px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.add-request-plus {
+    width: 140px;
+    height: 140px;
+    position: absolute;
+    right: -25px;
+    top: 0;
+    transform: rotate(10deg);
+    object-fit: contain;
+}
+
+/* Стили для чекбокса */
+.checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    border: 1px solid #E0E0E0;
+    border-radius: 4px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.checkbox-wrapper input[type="checkbox"]:checked {
+    background-color: #9747FF;
+    border-color: #9747FF;
+}
+
+.checkbox-wrapper input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 2px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.checkbox-label {
+    font-size: 12px;
+    color: #666666;
+    cursor: pointer;
+    user-select: none;
+}
+
+.upload-container {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.upload-container.drag-over {
+    border: 2px dashed #6B4EE6;
+    background-color: rgba(107, 78, 230, 0.1);
+}
+
+.image-preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.preview-item {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.preview-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.delete-image {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: #FF0000;
+}
+
+.delete-image:hover {
+    background: #FF0000;
+    color: white;
+}
+
+/* Стили для формы социальных сетей */
+.social-networks-form {
+    margin-top: 24px;
+}
+
+.social-input {
+    width: 100%;
+    padding: 16px;
+    border: 1px solid #E0E0E0;
+    border-radius: 12px;
+    font-size: 16px;
+    color: #000;
+    background: white;
+}
+
+.social-input::placeholder {
+    color: #000;
+}
+
+.social-input::placeholder {
+    background: linear-gradient(90deg, 
+        #000 0%,
+        #000 var(--text-end),
+        #666 var(--text-end),
+        #666 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.input-hint {
+    position: absolute;
+    right: 48px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    font-size: 16px;
+    pointer-events: none;
+}
+
+/* Обновляем стили для подсказки требований */
+.requirements-hint {
+    background: #FFF9E5;
+    border-radius: 12px;
+    padding: 16px;
+    margin: 24px 0;
+}
+
+.requirements-hint h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 8px;
+}
+
+.requirements-hint p {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+}
+
+/* Стили для группы социальных сетей */
+.social-input-group {
+    position: relative;
+    margin-bottom: 16px;
+}
+
+.social-input {
+    width: 100%;
+    padding: 16px;
+    border: 1px solid #E0E0E0;
+    border-radius: 12px;
+    font-size: 16px;
+    color: transparent;
+    background: white;
+}
+
+.social-name {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #000;
+    font-size: 16px;
+    pointer-events: none;
+}
+
+.hint-text {
+    position: absolute;
+    left: 120px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    font-size: 16px;
+    pointer-events: none;
+}
+
+.toggle-arrow {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+/* Стили для группы статистики */
+.stats-group {
+    margin-bottom: 16px;
+}
+
+.stats-group label {
+    font-size: 12px;
+    color: #666;
+    margin-top: 4px;
+    display: block;
+}
+
+.stats-group label:first-child {
+    font-size: 14px;
+    color: #000;
+    margin-bottom: 8px;
+}
+
+.stats-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #E0E0E0;
+    border-radius: 12px;
+    font-size: 16px;
+    background: white;
+    margin-bottom: 8px;
+}
+
+.stats-hint {
+    font-size: 12px;
+    color: #666;
+    margin-top: 4px;
+}
+
+.stats-text {
+    font-size: 12px;
+    color: #666;
+    margin-left: 6px;
+}
+
+.stats-checkbox {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border: 1px solid #E0E0E0;
+    border-radius: 2px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.stats-checkbox:checked {
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 3.5L4 6.5L9 1.5' stroke='black' stroke-width='1.5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.stats-text {
+    font-size: 12px;
+    color: #666;
+    margin-left: 4px;
+    vertical-align: middle;
+}
+
+.stats-checkbox:hover {
+    border-color: #666;
+}
+
+/* Стили для секции вознаграждения */
+.reward-section {
+    margin-top: 32px;
+    margin-bottom: 24px;
+}
+
+.reward-section h2 {
+    font-size: 24px;
+    color: #000;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.reward-input,
+.condition-input,
+.amount-input {
+    width: 100%;
+    padding: 16px;
+    border: 1px solid #E0E0E0;
+    border-radius: 12px;
+    font-size: 16px;
+    background: white;
+    margin-bottom: 8px;
+}
+
+.reward-hint {
+    font-size: 12px;
+    color: #666;
+    display: block;
+    margin-bottom: 24px;
+}
+
+.toggle-buttons {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.toggle-btn {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #E0E0E0;
+    border-radius: 12px;
+    background: white;
+    font-size: 16px;
+    color: #000;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.toggle-btn.active {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.what-is-it {
+    font-size: 12px;
+    color: #666;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 24px;
+}
+
+.what-is-it:hover {
+    text-decoration: underline;
+}
+
+/* Обновляем стили для фокуса на инпутах */
+.reward-input:focus,
+.condition-input:focus,
+.amount-input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+/* Активное состояние для Instagram */
+.instagram-input {
+    border-color: var(--primary-color);
+}
+
+/* Стили для всех инпутов при фокусе */
+.social-input:focus,
+.stats-input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+/* Стили для группы статистики */
+.stats-input-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.stats-input-wrapper {
+    flex: 1;
+}
+
+.stats-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #E0E0E0;
+    border-radius: 12px;
+    font-size: 16px;
+    background: white;
+    margin-bottom: 8px;
+}
+
+.stats-hint {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: #666;
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+}
+
+/* Стили для чекбокса */
+.stats-checkbox {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border: 1px solid #E0E0E0;
+    border-radius: 2px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.stats-checkbox:checked {
+    background-color: white;
+    border-color: #E0E0E0;
+}
+
+.stats-checkbox:checked::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 5px;
+    border-left: 1.5px solid #000;
+    border-bottom: 1.5px solid #000;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.stats-checkbox:hover {
+    border-color: #666;
+}
+
+.unimportant {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: #666;
+    margin-top: 8px;
+}
+
+.unimportant input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.section-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    flex: 1;
+}
+
+.back-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #666;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 16px 0;
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 0;
+    font-weight: 450;
+}
+
+.back-link::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url('assets/back.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 4px;
+}
+
+.back-link:hover {
+    color: var(--primary-color);
+}
+
+.back-link:active {
+    opacity: 0.8;
+}
+
+/* Обновляем отступы контента */
+.add-request-content,
+.requirements-content,
+.tz-content {
+    padding: 12px;
+    max-width: 360px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Обновляем стили для заголовка и прогресс-бара */
+.progress-steps {
+    margin-top: 16px;
+}
+
+h1 {
+    margin-top: 8px;
+    margin-bottom: 16px;
+}
+
+button {
+    appearance: auto;
+    text-rendering: auto;
+    color: buttontext;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    text-align: center;
+    cursor: default;
+    background-color: buttonface;
+}
+
+.store-info {
+    margin-top: 4px;
+    font-size: 12px;
+    color: #666;
+}
+
+.store-name {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+.section-icon img {
+    width: 24px;
+    height: 24px;
+    object-fit: cover;
+    border-radius: 4px;
+}

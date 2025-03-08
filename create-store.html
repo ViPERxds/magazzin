@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Создать магазин предложений</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Верхняя панель -->
+        <header class="header">
+            <div class="logo-container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="assets/logo.png" alt="Логотип">
+                    </a>
+                </div>
+                <div class="catalog-container">
+                    <img src="assets/katalog.png" alt="Каталог" class="catalog-icon">
+                    <span class="catalog-text">Каталог</span>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="notification-btn">
+                    <img src="assets/yved.png" alt="Уведомления">
+                    <span class="notification-count">0</span>
+                </button>
+                <button class="menu-btn">
+                    <div class="hamburger-menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+            </div>
+        </header>
+
+        <!-- Основной контент -->
+        <div class="create-store-content">
+            <h1><span class="purple-text">Создать</span> магазин<br>предложений</h1>
+            
+            <form class="store-form">
+                <div class="form-group">
+                    <label>Название магазина</label>
+                    <input type="text" placeholder="">
+                </div>
+
+                <div class="form-group">
+                    <label>Лого магазина или аватарка</label>
+                    <button type="button" class="upload-btn">
+                        <img src="assets/zagruzka.png" alt="Загрузить">
+                        <span>Кликните или перетащите<br>сюда фото, чтобы загрузить</span>
+                        <span class="file-size">До 1мб (JPG)</span>
+                    </button>
+                </div>
+
+                <div class="form-group">
+                    <label>Телефон</label>
+                    <input type="tel" placeholder="">
+                </div>
+
+                <div class="form-group">
+                    <label>E-mail</label>
+                    <input type="email" placeholder="">
+                </div>
+
+                <button type="submit" class="submit-btn">Готово</button>
+            </form>
+
+            <div class="additional-links">
+                <button class="blogger-btn">Хочу быть блогером</button>
+                <button class="help-btn">Есть вопрос? Нужна помощь?</button>
+                <button class="idea-btn">Предложить идею</button>
+                <button class="cooperation-btn">Сотрудничество</button>
+            </div>
+        </div>
+    </div>
+    <script src="create-store.js"></script>
+</body>
+</html> 

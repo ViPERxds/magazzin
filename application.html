@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заявка</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="application.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Поп-ап модерации -->
+        <div class="moderation-popup" id="moderationPopup">
+            <div class="popup-content">
+                <button class="close-popup">&times;</button>
+                <div class="popup-body">
+                    <h3>Ваша заявка на модерации.</h3>
+                    <p>Отправлена: 14.02 в 13:00 (МСК)</p>
+                    <p>В будни модерация занимает: до 1 часа (с 10:00 до 20:00)</p>
+                    <p>В выходные и с 20:00 до 10:00: До 5 часов</p>
+                    <p>Если вас не разместили <span class="support-link">напишите в поддержку</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Верхняя панель -->
+        <header class="header">
+            <div class="logo-container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="assets/logo.png" alt="Логотип">
+                    </a>
+                </div>
+                <div class="catalog-container">
+                    <img src="assets/katalog.png" alt="Каталог" class="catalog-icon">
+                    <span class="catalog-text">Каталог</span>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="notification-btn">
+                    <img src="assets/yved.png" alt="Уведомления">
+                    <span class="notification-count">0</span>
+                </button>
+                <button class="menu-btn">
+                    <div class="hamburger-menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+            </div>
+        </header>
+
+        <!-- Основной контент -->
+        <div class="main-content">
+            <div class="page-title">
+                <h1>Заявки 1</h1>
+            </div>
+
+            <!-- Табы -->
+            <div class="tabs">
+                <div class="tab" id="tab-active">Активные</div>
+                <div class="tab active" id="tab-moderation">Модерации</div>
+                <div class="tab" id="tab-hidden">Скрытые</div>
+            </div>
+
+            <!-- Содержимое вкладки "Активные" -->
+            <div class="tab-content" id="tab-active-content">
+                <div class="active-info no-data-message">
+                    <h3>У вас нет активных заявок</h3>
+                    <p>Здесь будут отображаться ваши активные заявки после прохождения модерации</p>
+                </div>
+            </div>
+
+            <!-- Содержимое вкладки "Модерации" -->
+            <div class="tab-content active" id="tab-moderation-content">
+                <!-- Информация о модерации -->
+                <div class="moderation-info">
+                    <h3>Ваша заявка на модерации.</h3>
+                    <p>Отправлена: 14.02 в 13:00 (МСК)</p>
+                    <p>В будни модерация занимает: до 1 часа (с 10:00 до 20:00)</p>
+                    <p>В выходные и с 20:00 до 10:00: До 5 часов</p>
+                    <p>Если вас не разместили <a href="#" class="support-link">напишите в поддержку</a></p>
+                </div>
+
+                <!-- Карточка товара -->
+                <div class="product-card">
+                    <div class="product-content">
+                        <a href="base.html" class="product-link">
+                            <div class="product-image-left">
+                                <img src="assets/tz.jpg" alt="Фото товара">
+                            </div>
+                        </a>
+                        
+                        <!-- Блоки с ценой и выплатой -->
+                        <div class="price-block">
+                            <div class="price purple">
+                                <div class="price-value">800 ₽</div>
+                                <div class="price-label">Выплата</div>
+                            </div>
+                            <div class="price gray">
+                                <div class="price-value">500 ₽</div>
+                                <div class="price-label">Цена</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Блоки с выплатой и доплатой -->
+                        <div class="payment-row">
+                            <div class="payment-block">
+                                <div class="payment-label">Выплата:</div>
+                                <div class="payment-value">Сразу</div>
+                            </div>
+                            <div class="payment-block">
+                                <div class="payment-label">Доплата:</div>
+                                <div class="payment-value bonus">Нет</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Социальные кнопки -->
+                        <div class="social-buttons">
+                            <div class="social-btn">Instagram*</div>
+                            <div class="social-btn">VK</div>
+                        </div>
+                        
+                        <!-- Требования -->
+                        <div class="requirements-block">
+                            <div class="requirement-item">
+                                <span class="requirement-label">Пул от:</span>
+                                <span class="requirement-value">Неважно</span>
+                            </div>
+                            <div class="requirement-item">
+                                <span class="requirement-label">Reels от:</span>
+                                <span class="requirement-value">Неважно</span>
+                            </div>
+                            <div class="requirement-item">
+                                <span class="requirement-label">Stories от:</span>
+                                <span class="requirement-value">Неважно</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Содержимое вкладки "Скрытые" -->
+            <div class="tab-content" id="tab-hidden-content">
+                <div class="hidden-info no-data-message">
+                    <h3>У вас нет скрытых заявок</h3>
+                    <p>Здесь будут отображаться заявки, которые вы решили скрыть</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Дополнительные кнопки -->
+        <div class="additional-buttons">
+            <button class="blogger-btn">Хочу быть блогером</button>
+            <button class="help-btn">Есть вопрос? Нужна помощь?</button>
+            <button class="idea-btn">Предложить идею</button>
+            <button class="cooperation-btn">Сотрудничество</button>
+        </div>
+    </div>
+    <script src="application.js"></script>
+</body>
+</html> 

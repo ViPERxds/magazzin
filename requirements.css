@@ -1,0 +1,700 @@
+:root {
+    --primary-color: #9747FF;
+    --secondary-color: #9747FF;
+    --background-color: #F5F5F5;
+    --card-background: #FFFFFF;
+    --text-color: #333333;
+    --border-radius: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.app-container {
+    max-width: 360px;
+    margin: 0 auto;
+    background-color: white;
+    min-height: 100vh;
+}
+
+/* Стили для верхней панели */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    width: 360px;
+    height: 47px;
+    background-color: #F5F7FA;
+    border-radius: 12px;
+    border: 1px solid #E0E0E0;
+    margin-bottom: 16px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    overflow: hidden;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.logo a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.logo a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.catalog-container {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.catalog-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.catalog-text {
+    font-size: 16px;
+    font-weight: normal;
+    color: #000;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.notification-btn {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+}
+
+.notification-btn img {
+    width: 24px;
+    height: 24px;
+}
+
+.notification-count {
+    font-size: 12px;
+    font-weight: 600;
+    color: #9747FF;
+    line-height: 1;
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.menu-btn img {
+    width: 24px;
+    height: 24px;
+}
+
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    width: 24px;
+    height: 14px;
+    justify-content: center;
+    gap: 4px;
+}
+
+.hamburger-menu span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: #333;
+    border-radius: 2px;
+}
+
+.avatar {
+    display: none;
+}
+
+/* Основной контент */
+.requirements-content {
+    padding: 12px;
+}
+
+.requirements-content h1 {
+    font-size: 32px;
+    margin: 8px 0;
+    font-weight: 550;
+    line-height: 1.2;
+}
+
+.requirements-content h1 span {
+    color: var(--primary-color);
+}
+
+.purple-text {
+    color: var(--primary-color);
+}
+
+.stats {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.stats span {
+    font-size: 14px;
+    color: #000;
+    background: #F5F5F5;
+    padding: 6px 12px;
+    border-radius: 100px;
+    font-weight: 450;
+}
+
+/* Прогресс */
+.progress-tabs {
+    margin-bottom: 8px;
+}
+
+.tab-buttons {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #E0E0E0;
+    border-radius: 12px;
+    background: white;
+    font-size: 14px;
+    color: #000;
+    text-align: center;
+    user-select: none;
+    cursor: pointer;
+}
+
+.tab-btn:last-child {
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.tab-btn.active {
+    border: 2px solid var(--primary-color);
+    padding: 7px;
+
+    font-weight: 500;
+}
+
+.tab-btn.completed {
+    border: 2px solid var(--primary-color);
+    padding: 7px;
+
+    font-weight: 500;
+}
+
+.progress-bar {
+    height: 4px;
+    background: #F5F5F5;
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #D67BFF 0%, #9747FF 100%);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+    width: 50%;
+}
+
+/* Подсказка */
+.requirements-hint {
+    margin-bottom: 16px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.requirements-hint img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 16px;
+}
+
+.requirements-hint h3 {
+    font-size: 20px;
+    color: #000;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.requirements-hint p {
+    font-size: 16px;
+    color: #000;
+    opacity: 0.8;
+}
+
+/* Социальные сети */
+.social-networks {
+    margin-bottom: 24px;
+}
+
+.social-networks h2 {
+    font-size: 24px;
+    color: #000;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+.social-network-block {
+    margin-bottom: 16px;
+    border: 1px solid #E0E0E0;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.social-header {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    background: white;
+    cursor: pointer;
+    user-select: none;
+}
+
+.network-name {
+    font-size: 16px;
+    color: #000;
+    margin-right: 4px;
+}
+
+.network-hint {
+    font-size: 14px;
+    color: #666666;
+}
+
+.toggle-btn {
+    margin-left: auto;
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: #666666;
+    cursor: pointer;
+    padding: 0 8px;
+    transition: transform 0.3s ease;
+}
+
+.social-header.open .toggle-btn {
+    transform: rotate(180deg);
+}
+
+.network-fields {
+    padding: 16px;
+    border-top: 1px solid #E0E0E0;
+    display: none;
+}
+
+.social-header.open + .network-fields {
+    display: block;
+}
+
+/* Группы статистики */
+.stats-group {
+    margin-bottom: 16px;
+}
+
+.stats-group:last-child {
+    margin-bottom: 0;
+}
+
+.stats-group label {
+    display: block;
+    font-size: 14px;
+    color: #000;
+    margin-bottom: 8px;
+}
+
+.stats-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #E0E0E0;
+    border-radius: 12px;
+    font-size: 16px;
+    background: white;
+    margin-bottom: 8px;
+}
+
+/* Стили для активного состояния поля */
+.stats-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.stats-input::placeholder {
+    color: #999999;
+}
+
+/* Стили для отключенного состояния */
+.stats-input:disabled {
+    background: #F5F5F5;
+    color: #666666;
+    cursor: not-allowed;
+}
+
+.unimportant {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: #666;
+}
+
+.unimportant input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    cursor: pointer;
+}
+
+/* Вознаграждение */
+.reward-section {
+    margin-top: 32px;
+}
+
+.reward-section h2 {
+    font-size: 24px;
+    color: #000;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+.reward-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #E0E0E0;
+    border-radius: 12px;
+    font-size: 16px;
+    background: white;
+    margin-bottom: 8px;
+}
+
+.reward-hint {
+    font-size: 12px;
+    color: #666666;
+    margin-bottom: 24px;
+}
+
+.reward-option {
+    margin-bottom: 24px;
+}
+
+.reward-option h3 {
+    font-size: 14px;
+    color: #000;
+    margin-bottom: 12px;
+    font-weight: normal;
+}
+
+.option-buttons {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.option-btn {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #E0E0E0;
+    border-radius: 12px;
+    background: white;
+    font-size: 14px;
+    color: #000;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.option-btn:active {
+    transform: scale(0.98);
+}
+
+.option-btn.active {
+    background: white;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    padding: 11px;
+    font-weight: 500;
+}
+
+.what-is-it {
+    font-size: 12px;
+    color: #666666;
+    text-decoration: none;
+}
+
+.condition-fields {
+    margin-bottom: 24px;
+}
+
+.input-group {
+    margin-bottom: 16px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 14px;
+    color: #000;
+    margin-bottom: 8px;
+}
+
+.condition-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #E0E0E0;
+    border-radius: 12px;
+    font-size: 16px;
+    background: white;
+}
+
+.add-tz-btn {
+    width: 100%;
+    padding: 18px;
+    background: linear-gradient(135deg, #FF7BFF 0%, #FF4FD0 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 32px;
+    margin-bottom: 16px;
+    cursor: pointer;
+}
+
+.add-tz-btn:active {
+    background: linear-gradient(135deg, #FF6AFF 0%, #FF3FC0 100%);
+}
+
+.additional-blocks {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.additional-blocks .block {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.additional-blocks .block h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.additional-blocks .block.dark {
+    background-color: #212121 !important;
+}
+
+.additional-blocks .block.dark h3 {
+    color: white !important;
+}
+
+.back-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #666;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 16px 0;
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 0;
+    font-weight: 450;
+}
+
+.back-link::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url('assets/back.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 4px;
+}
+
+.back-link:hover {
+    color: var(--primary-color);
+}
+
+.back-link:active {
+    opacity: 0.8;
+}
+
+/* Стили для поп-апов */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+}
+
+.popup-overlay.show {
+    display: flex;
+}
+
+.popup-content {
+    background: white;
+    padding: 24px;
+    border-radius: 16px;
+    max-width: 90%;
+    width: 360px;
+    position: relative;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+}
+
+.popup-close {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.popup-close:hover {
+    color: var(--primary-color);
+}
+
+.popup-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #000;
+    margin: 0 0 16px;
+    padding-right: 24px;
+}
+
+.popup-text {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #666;
+    margin: 0 0 12px;
+}
+
+.popup-text:last-of-type {
+    margin-bottom: 24px;
+}
+
+.popup-button {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #D67BFF 0%, #9747FF 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.popup-button:hover {
+    opacity: 0.9;
+}
+
+.popup-button:active {
+    background: linear-gradient(135deg, #C56BEF 0%, #8637EF 100%);
+}
+
+/* Стили для иконки вопроса */
+.info-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: #8774E1;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 16px;
+    font-size: 12px;
+    margin-left: 4px;
+    cursor: pointer;
+} 

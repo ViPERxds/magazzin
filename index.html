@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Mini App - Кабинет Заказчика</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <div class="app-container">
+
+        
+        <!-- Верхняя панель -->
+        <header class="header">
+            <div class="logo-container">
+                <div class="logo">
+                    <img src="assets/logo.png" alt="Логотип">
+                </div>
+                <div class="catalog-container">
+                    <img src="assets/katalog.png" alt="Каталог" class="catalog-icon">
+                    <span class="catalog-text">Каталог</span>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="notification-btn">
+                    <img src="assets/yved.png" alt="Уведомления">
+                    <span class="notification-count">0</span>
+                </button>
+                <button class="menu-btn">
+                    <div class="hamburger-menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+            </div>
+        </header>
+
+        <!-- Основной контент -->
+        <main class="main-content">
+            <!-- Информационные блоки "Как это работает" -->
+            <div class="info-blocks">
+                <div class="info-block">
+                    <div class="info-block-content">
+                        <h3>Как это работает?</h3>
+                    </div>
+                </div>
+                <div class="info-block">
+                    <div class="info-block-content">
+                        <h3>Как проверить блогера?</h3>
+                    </div>
+                </div>
+                <div class="info-block">
+                    <div class="info-block-content">
+                        <h3>Как выбрать блогера?</h3>
+                    </div>
+                </div>
+                <div class="info-block">
+                    <div class="info-block-content">
+                        <h3>Как это работает?</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Кнопка добавления заявки -->
+            <div class="add-request">
+                <div class="add-request-text">
+                    <h2 class="purple-text">Добавить</h2>
+                    <p>заявку на поиск</p>
+                    <div class="add-request-stats">
+                        <span>Скидка 0%</span>
+                        <span>Размещений: 0</span>
+                    </div>
+                </div>
+                <img src="assets/Untitled Project.jpg" alt="Добавить" class="add-request-plus">
+            </div>
+
+            <!-- Разделы -->
+            <div class="sections">
+                <div class="section-row">
+                    <a href="application.html" class="section-link">
+                        <div class="section-item">
+                            <h3>Заявки</h3>
+                            <span class="count" id="applications-count">0</span>
+                            <div class="section-icon">
+                                <img src="assets/zayavki.png" alt="Заявки">
+                            </div>
+                        </div>
+                    </a>
+                    <div class="section-item">
+                        <h3>В работе</h3>
+                        <span class="count">0</span>
+                        <div class="section-icon">
+                            <img src="assets/v-rabote.png" alt="В работе">
+                        </div>
+                    </div>
+                </div>
+                <div class="section-row">
+                    <div class="section-item">
+                        <h3>Отзывы</h3>
+                        <span class="count">0</span>
+                        <div class="section-icon">
+                            <img src="assets/otzivi.png" alt="Отзывы">
+                        </div>
+                    </div>
+                    <a href="create-store.html" class="section-link">
+                        <div class="section-item">
+                            <h3>Магазин</h3>
+                            <div class="store-info">
+                                <span class="store-name" id="storeName"></span>
+                            </div>
+                            <div class="section-icon">
+                                <img src="assets/magaz.png" alt="Магазин" id="storeLogo">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Дополнительные кнопки -->
+            <div class="additional-buttons">
+                <button class="blogger-btn">Хочу быть блогером</button>
+                <button class="help-btn">Есть вопрос? Нужна помощь?</button>
+                <button class="idea-btn">
+                    Предложить идею
+                </button>
+                <button class="cooperation-btn">Сотрудничество</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Страница кода доступа (изначально скрыта) -->
+    <div class="access-code-page" style="display: none;">
+        <!-- Копируем хедер с главной страницы -->
+        <header class="header">
+            <div class="logo-container">
+                <div class="logo">
+                    <img src="assets/logo.png" alt="Логотип">
+                </div>
+                <div class="catalog-container">
+                    <img src="assets/katalog.png" alt="Каталог" class="catalog-icon">
+                    <span class="catalog-text">Каталог</span>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="notification-btn">
+                    <img src="assets/yved.png" alt="Уведомления">
+                    <span class="notification-count">0</span>
+                </button>
+                <button class="menu-btn">
+                    <div class="hamburger-menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+            </div>
+        </header>
+
+        <!-- Контент страницы -->
+        <div class="access-content">
+            <h1>Добавить заявку на<br>поиск блогера</h1>
+            <div class="stats">
+                <span>Скидка 0%</span>
+                <span>Размещений: 0</span>
+            </div>
+
+            <div class="manager-card">
+                <div class="manager-info">
+                    <h2>Чтобы<br>получить код</h2>
+                    <p>Напишите менеджеру</p>
+                </div>
+                <img src="assets/manager-photo.jpg" alt="Менеджер" class="manager-photo">
+            </div>
+
+            <button class="write-manager-btn">Написать менеджеру</button>
+
+            <div class="code-input-section">
+                <label>Ваш код</label>
+                <input type="text" placeholder="Введите код доступа">
+            </div>
+
+            <button class="get-access-btn">Получить доступ</button>
+
+            <div class="additional-links">
+                <button class="become-blogger-btn">Хочу быть блогером</button>
+                <button class="help-btn-dark">Есть вопрос? Нужна помощь?</button>
+                <button class="suggest-idea-btn">Предложить идею</button>
+                <button class="cooperation-btn">Сотрудничество</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html> 
