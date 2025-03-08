@@ -270,12 +270,34 @@ document.addEventListener('DOMContentLoaded', function() {
     // Обработчик для кнопки "Опубликовать"
     const publishBtn = document.querySelector('.publish-btn');
     if (publishBtn) {
-        publishBtn.addEventListener('click', function(e) {
+        publishBtn.addEventListener('click', async function(e) {
             e.preventDefault();
-            // Сохраняем состояние таба "Модерации" для страницы заявок
-            localStorage.setItem('activeTab', 'moderation');
-            // Переходим на страницу заявок
-            window.location.href = 'application.html';
+            
+            try {
+                // Собираем все данные
+                const data = {
+                    p: getProductData() || {}, // product data
+                    r: getRequirementsData() || {}, // requirements data
+                    t: getTzData() || '', // tz data
+                    s: getStoreData() || {} // store data
+                };
+
+                // Отправляем данные в Telegram WebApp
+                if (window.Telegram && window.Telegram.WebApp) {
+                    window.Telegram.WebApp.sendData(JSON.stringify(data));
+                    console.log('Данные успешно отправлены в Telegram WebApp');
+                }
+
+                // Сохраняем состояние таба "Модерации" для страницы заявок
+                localStorage.setItem('activeTab', 'moderation');
+                // Сохраняем время отправки
+                localStorage.setItem('submissionTime', new Date().toISOString());
+                // Переходим на страницу заявок
+                window.location.href = 'application.html';
+            } catch (error) {
+                console.error('Ошибка при отправке данных:', error);
+                alert('Произошла ошибка при отправке заявки. Пожалуйста, попробуйте еще раз.');
+            }
         });
     }
 });
