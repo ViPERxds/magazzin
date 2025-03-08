@@ -72,11 +72,14 @@ document.addEventListener('DOMContentLoaded', function() {
         // Сохраняем данные в localStorage
         localStorage.setItem('storeData', JSON.stringify(storeData));
 
-        // Показываем уведомление об успешном сохранении
-        alert('Данные магазина успешно сохранены!');
+        // Показываем уведомление
+        const notification = document.getElementById('notification');
+        notification.classList.add('show');
         
-        // Возвращаемся на главную страницу
-        window.location.href = 'index.html';
+        // Через 2 секунды переходим на главную страницу
+        setTimeout(() => {
+            window.location.href = 'index.html';
+        }, 2000);
     });
 });
 
